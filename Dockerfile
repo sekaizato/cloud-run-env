@@ -9,8 +9,11 @@ COPY . .
 
 # Install production dependencies.
 RUN pip install Flask gunicorn
-# RUN pip install requests
-# RUN pip install pytz
+RUN pip install requests
+RUN pip install pandas
+RUN pip install --upgrade google-cloud-bigquery
+RUN pip install --upgrade google-auth
+RUN pip install oauth2client
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
